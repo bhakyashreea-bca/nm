@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Review this part and modify it to your liking -->
+    <meta name="description" content="Sample text for portfolio template meta tag">
+    <meta name="keywords" content="Sample text for portfolio template meta tag">
+    <meta name="author" content="Sample text for portfolio template meta tag">
+    <title>My portfolio website</title>
+
+
+    <style>
+    
+    /* BODY */
+html{
+    font-size: 100%;
+    line-height: 1.2rem;
+    /* text-size adjust is to maintain the text-size even when the users rotates their phone to landscape view */
+    -webkit-text-size-adjust: 100%;
+    /* Firefox supports only the android version and safari supports only the ios version at the moment according to MDN (2023)*/
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    background-color: rgba(253, 244, 244, 30%);
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0px;
+}
+/*-------------------------------------------*/
+
+/* GENERAL */
+/* Fonts */
+.large{
+    font-weight: normal;
+    line-height: normal;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0px;  
+    background-image: linear-gradient(135deg, rgb(250, 113, 283)0%, rgb(255, 142, 134)60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-wrap: break-word;
+}
+
+.medium-spacing{
+    font-weight: normal;
+    line-height: normal;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    margin: 0px;
+}
+
+.medium-spacing-halfsize{
+    font-weight: normal;
+    line-height: normal;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin: 0px;
+}
+
+.main-title-large{
+    font-weight: normal;
+    line-height: normal;
+    font-size: 3rem;
+}
+
+.main-title{
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1.5rem;
+}
+
+.small{
+    font-weight: normal;
+    font-size: 0.7rem;
+}
+
+.quote{
+    font-family: 'Covered By Your Grace', cursive, sans-serif;
+    font-size: 1.5em;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.colorful-letter{
+    background-image: linear-gradient(135deg, rgb(250, 113, 283)0%, rgb(255, 142, 134)60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Background colors */
+.baby-pink{
+    background-color: rgba(253, 129, 187, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.baby-pink-light{
+    background-color: rgba(243, 162, 200, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Setting alignments and sizing */
+/* for the flexbox */
+.wrapper{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px 20px;
+}
+
+.column{
+    flex: 50%;
+}
+
+.w-900{
+    max-width: 900px;
+    margin: auto;
+}
+
+/* for the grid system */
+.grid-system-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.grid-system-4{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* other */
+.max-width{
+    max-width: 450px;
+}
+
+.max-height{
+    max-height: 350px;
+}
+
+.align-center{
+    align-self: center;
+}
+
+.justify-content{
+    justify-content: right;
+}
+
+.justify{
+    text-align: justify;
+}
+
+.center{
+    text-align: center;
+}
+
+.padding{
+    padding: 20px;
+}
+
+.padding-top{
+    padding-top: 20px;
+}
+
+.padding-right{
+    padding-right: 20px;
+}
+
+.padding-bottom{
+    padding-bottom: 20px;
+}
+
+.padding-left{
+    padding-left: 20px;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+.margin-trbl10{
+    margin: 10px;
+}
+
+/* for sticky bottom button */
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom{
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Miscellaneous */
+.button{
+    background-color: rgba(253, 129, 187, 0.3);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5%;
+    color: black;
+}
+
+/* I only used button-outline on this project, but you may like the other one more */
+.button-outline{
+    border: 2px solid  rgba(253, 129, 187, 0.3);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5%;
+    color: black;
+}
+
+.link{
+    text-decoration: none;
+}
+
+/* I had to double this code, because of the :hover and :active on link above */
+.link-no-scale{
+    text-decoration: none;
+}
+
+.no-padding-list-item{
+    padding-left: 0;
+}
+
+.padding-list-10{
+    padding: 10px;
+}
+
+.no-bullet-list{
+    list-style-type: none;
+}
+/* ---------------------------------- */
+
+/* ANIMATIONS AND OTHER BEAUTIES */
+.button-outline:hover, .button-outline:active{
+    border: 2px solid  rgba(253, 129, 187, 0.3);
+    background-color: rgba(253, 129, 187, 0.6);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5%;
+    color: rgb(255, 255, 255);
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.link:hover, .link:active{
+    font-size: 1.2rem;
+    transform: scale(1.5);
+    transition: 1s ease-in-out;
+    /* second solution: */
+    /* font-size: 1.2rem; 
+    transition: font-size 2s ease-in-out;  */
+}
+
+.progress-bar:hover, .progress-bar:active {
+    box-shadow: 5px 5px 5px #cdadcd;
+    transition: box-shadow 1s ease;
+}
+
+/* ---------------------------------- */
+
+/* NAV */
+nav {
+    margin-bottom: 30px;
+}
+
+.main-nav{
+    background-color: rgb(253, 249, 249);
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    padding: 20px;
+    margin: 0px;
+}
+
+.main-nav li {
+    padding: 5px 10px;
+}
+
+.main-nav li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.main-nav li a:hover {
+    color: rgb(254, 175, 210);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sticky {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* <-- this is the fix */
+}
+
+/* Nav-icon */
+.toggle, #drop{
+    display: none;
+}
+
+#main-toggle{
+    border: 1px solid #df36854d;
+    float: right;
+    padding: 20px;
+    /* position: relative; */
+    user-select: none;
+}
+
+.nav-icon{
+    background-color: #df36854d;
+    display: block;
+    height: 3px;
+    width: 10px;
+    position: relative;
+}
+
+.nav-icon::before,
+.nav-icon::after{
+    background-color: #df36854d;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.nav-icon::before{
+    top: 5px;
+}
+
+.nav-icon::after{
+    top: -5px;
+}
+/* ---------------------------------- */
+
+/* FOOTER */
+footer{
+    color: #000000;
+    text-align: center;
+    padding: 20px 0px;
+}
+/* ---------------------------------- */
+
+/* INTRODUCTION */
+.header-img{
+    border-radius: 70%;
+}
+/* ---------------------------------- */
+
+/* ARTICLE */
+/* Everything here is made with general classes. Find them in the GENERAL section */
+/* ---------------------------------- */
+
+/* ABOUT ME */
+/* Everything here is made with general classes. Find them in the GENERAL section */
+/* ---------------------------------- */
+
+/* SKILLS */
+.skills {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.progress-bar {
+    background-color: #353b48;
+    display: block;
+    height: 10px;
+    border-radius: 20px;
+}
+
+.progress-bar span {
+    height: 10px;
+    float: left;
+    background: linear-gradient(135deg, rgb(250, 113, 283)0%, rgb(255, 142, 134)60%);
+    border-radius: 20px;
+    -webkit-background: linear-gradient(135deg, rgb(250, 113, 283) 0%, rgb(255, 142, 134) 60%);
+    -webkit-border-radius: 20px;
+}
+
+.html {
+    width: 90%;
+    animation: html 3s;
+}
+
+.css {
+    width: 75%;
+    animation: css 3s;
+}
+
+.javascript {
+    width: 63%;
+    animation: javascript 3s;
+}
+
+.php {
+    width: 54%;
+    animation: php 3s;
+}
+
+.comm-adapt {
+    width: 90%;
+    animation: comm-adapt 3s;
+}
+
+.team-player {
+    width: 85%;
+    animation: team-player 3s;
+}
+
+.problem-solving {
+    width: 82%;
+    animation: problem-solving 3s;
+}
+
+.open-minded {
+    width: 75%;
+    animation: open-minded 3s;
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 63%;
+    }
+}
+
+@keyframes php {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 54%;
+    }
+}
+
+@keyframes comm-adapt {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes team-player {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes problem-solving {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 82%;
+    }
+}
+
+@keyframes open-minded {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+/* ---------------------------------- */
+
+/* PROJECTS */
+/* I also used these card settings on other sub-pages */
+.card{
+    box-shadow: 0 3px 10px rgb(127 110 187 / 0.2); 
+    padding: 20px;
+}
+
+.box{
+    display: block;
+    width: 100px;
+}
+/* ---------------------------------- */
+
+/* CONTACT ME */
+.box-contact{
+    display: block;
+    width: 100%; 
+    text-align: center;
+}
+
+.logo{
+    width: 50px;
+}
+/* ---------------------------------- */
+
+/* SPECIAL THANKS */
+/* Everything here is made with general classes. Find them in the GENERAL section */
+/* ---------------------------------- */
+
+/* RESPONSIVENESS */
+/* Had to pay attention for that wondow.innerWidth when calculated max-width */
+@media screen and (max-width: 867px){
+    body{
+        font-size: 90%;
+    }
+
+    .grid-system-2{
+        grid-template-columns: 1fr;
+    }
+
+    .large{
+        font-size: 4rem;
+    }
+
+    .medium-spacing{
+        font-size: 2.5rem;
+    }
+
+    .main-title-large{
+        font-size: 2rem;
+        text-align: center;  
+        margin: 0;
+    }
+
+    .main-title{
+        text-align: center;
+        margin: 0;
+    }
+
+    .small{
+        font-size: 0.6rem;
+    }
+
+    .max-width{
+        max-width: 300px
+    }
+
+    .max-height{
+        max-height: 250px;
+    }
+
+    .padding-top{
+        padding-top: 10px;
+    }
+    
+    .padding-right{
+        padding-right: 10px;
+    }
+
+    .padding-bottom{
+        padding-bottom: 10px;
+    }
+    
+    .padding-left{
+        padding-left: 10px;
+    }
+
+    .logo{
+        width: 40px;
+    }
+}
+
+/* wrapper on home page looks better with this @media */
+@media screen and (max-width: 750px){
+    .wrapper{
+        flex-direction: column;
+        gap: 20px 0px;
+    }
+
+    .column{
+        flex: 100%;
+    }
+
+    .box{
+        margin: auto;
+    }
+
+    .thanks{
+        text-align: center;
+    }
+}
+
+/* media query for hamburger menu with dropdown */
+@media screen and (max-width: 510px){
+    .main-nav{
+        display: none;
+    }
+
+    .toggle{
+        display: block;
+        background-color: #ffffff;
+        border: 1px solid #fd81bb4d;
+    }
+    
+    .toggle:hover{
+        background-color: #f0e7e7;
+    }
+    
+    #drop:checked+.main-nav{
+        display: block;
+    }
+
+    nav{
+        padding-bottom: 25px;
+    }
+
+    .max-width{
+        max-width: 100%;
+    }
+}
+
+/* media query for smaller screens */
+/* smaller fonts were my way to go */
+@media screen and (max-width: 377px){
+    body{
+        line-height: 1.5rem;
+    }
+
+    .large{
+        font-size: 3rem;
+    }
+
+    .medium-spacing{
+        font-size: 1.5rem;
+    }
+
+    .medium-spacing-halfsize{
+        font-size: 1.5rem;
+    }
+
+    .main-title{
+        font-size: 1rem;
+    }
+
+    .main-title-large{
+        font-size: 1.5rem;
+    }
+}
+
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgba(45, 45, 45, 1);
+        color: white;
+    }
+
+    .baby-pink {
+        background-color: rgb(243, 162, 200);
+    }
+
+    .baby-pink-light {
+        background-color: rgba(45, 45, 45, 1);
+        border: 2px solid rgb(243, 162, 200);
+    }
+
+    .main-nav {
+        background-color: rgba(45, 45, 45, 1);
+    }
+
+    .main-nav li a {
+        color: white;
+    }
+
+    .main-nav li a:hover {
+        color: rgb(254, 175, 210);
+    }
+
+    #main-toggle{
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background-color: rgba(45, 45, 45, 1);
+    }
+    
+    .nav-icon{
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .nav-icon::before,
+    .nav-icon::after{
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .button-outline{
+        border: 2px solid rgb(254, 175, 210);
+        color: white;
+    }
+
+    .button-outline:hover, .button-outline:active{
+        border: 2px solid rgb(254, 175, 210);
+        background-color: rgb(254, 175, 210);
+    }
+
+    .card{
+        box-shadow: 0 0px 0px; 
+        border: 2px solid rgb(254, 175, 210);
+    }
+
+    .logo{
+        background-color: white;
+        padding: 2px;
+        border-radius: 4px;
+    }
+
+    .hobbies{
+        background-color: white;
+        border-radius: 100%;
+        padding: 10px;
+    }
+
+    footer{
+        color: white;
+    }
+
+    @media screen and (max-width: 929px) {
+        .baby-pink-light {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}</style>
+    <!-- Adding favicon for older and modern browsers,
+        It is best to add favicon to the main folder, 
+        I used an only ico converter for best result,
+        Do not forget to clear you cache to see the changes -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- font for the quote -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+    <!-- font for the body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <!-- font for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="sticky">
+        <label for="drop" class="toggle" id="main-toggle">
+            <span class="nav-icon"></span>
+        </label>
+        <input type="checkbox" id="drop">
+        <ul class="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#am">About me</a></li>
+            <li><a href="#sk">Skill-set</a></li>
+            <li><a href="#contact-me">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- introduction -->
+    <header class="grid-system-2 w-900 padding">
+        <section class="align-center">
+            <h1 class="medium-spacing">Hello, I am</h1>
+            <h1 class="large">Bhakyashree</h1>
+            <p class="justify">Second-Year BCA Student | Exploring the World of Programming</p>
+        </section>
+        <section class="center align-center">
+        </section>
+    </header>
+
+
+    <!-- quote -->
+    <article class="baby-pink">
+        <p class="quote uppercase">Scroll more...</p>
+        <p>To explore about me</p>
+    </article>
+
+    <!-- about me -->
+    <!-- That about me png is something I've made for fun, it has a purple version too, feel free to use it or change it to anything else. -->
+    
+    <section class="wrapper" id="am">
+        <section class="margin-auto">
+            <img width="230" height="280" src="photo.jpg" alt="about-me-logo">
+        </section>
+        <section class="justify align-center">
+            <p class="bold">About me</p>
+            <p>"Hello! I’m Bhakyashree, a second-year BCA student at SRM College, with a growing passion for technology, programming, and creative problem-solving. I enjoy exploring the world of web development, data structures, and emerging technologies. I'm currently learning new skills in Java, HTML, CSS, and JavaScript, and I’m excited to turn my curiosity into real-world projects. As I continue my academic journey, I aim to build a strong foundation in computer science and contribute to innovative solutions in the tech world."</p>
+            <p>"I enjoy working with languages like Java, HTML, CSS, and JavaScript, and I’m passionate about turning ideas into real-world projects. I believe in continuous learning and love taking on challenges that help me grow both technically and creatively."</p>
+            <p>Apart from academics, I enjoy reading books, drawing, and listening to music, which allow me to relax and stay inspired. I aim to build a solid foundation in computer science and contribute to meaningful innovations in the tech world.</p>
+            <h4>Resume</h4>
+            <p class="padding-top"> <a href="Bhakyashree a.pdf"  class="button-outline">DOWNLOAD</a></p>
+        </section>
+    </section>
+
+    <!-- skills -->
+    <!-- use this to showcase your skills, if you make changes, do not forget to modify the css accordingly -->
+    <section>
+        <h3 class="main-title center padding">Skills</h3>
+    </section>
+    <section class="wrapper" id="sk">
+        <section class="column">
+            <p class="padding-bottom">Technical skills</p>
+            <section class="skills">
+                <ul class="no-bullet-list no-padding-list-item">
+                    <li>
+                        <p>html</p>
+                        <span class="progress-bar"><span class="html"></span></span>
+                    </li>
+                    <li>
+                        <p>css</p>
+                        <span class="progress-bar"><span class="css"></span></span>
+                    </li>
+                    <li>
+                        <p>javascript</p>
+                        <span class="progress-bar"><span class="javascript"></span></span>
+                    </li>
+                    <li>
+                        <p>mongodb</p>
+                        <span class="progress-bar"><span class="php"></span></span>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section class="column">
+            <p class="padding-bottom">Professional skills</p>
+            <section class="skills">
+                <ul class="no-bullet-list no-padding-list-item">
+                    <li>
+                        <p>communication</p>
+                        <span class="progress-bar"><span class="comm-adapt"></span></span>
+                    </li>
+                    <li>
+                        <p>teamplayer, adaptability</p>
+                        <span class="progress-bar"><span class="team-player"></span></span>
+                    </li>
+                    <li>
+                        <p>problem solving</p>
+                        <span class="progress-bar"><span class="problem-solving"></span></span>
+                    </li>
+                    <li>
+                        <p>open-minded</p>
+                        <span class="progress-bar"><span class="open-minded"></span></span>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    </section>
+
+    <!-- Projects -->
+    <!-- If you have more projects you are working on at the moment, or just want to show more, double the whole section below without the title and you are good to go -->
+    <section>
+        <h3 class="main-title center padding">Projects I am currently working on</h3>
+    </section>
+    <section class="wrapper">
+        <section class="column card justify flex">
+            
+            <p class="padding bold center">Portfolio website</p>
+            <p>A portfolio website about me</p>
+            <p>This is a personal portfolio website designed to showcase my academic background, skills, projects, and achievements. The website features a clean and responsive design using HTML, CSS, and JavaScript, with additional styling through Bootstrap. It serves as a digital resume and a central place to present my work and contact information to potential recruiters and collaborators. The portfolio includes sections like About Me, Projects, Resume, and Contact.</p>
+            <p class="padding-top bottom"><a href="index.html" class="button-outline">Portfolio</a></p>
+        </section>
+        <section class="column card justify flex">
+            <p class="padding bold center">Movies suggestion website</p>
+            <p>It suggest the movie based on your mood</p>
+            <p>This application recommends movies based on the user's current mood, such as Romantic, Horror, Comedy, Action, and more. Built using HTML, CSS and the app offers an engaging user interface where users can select their mood and instantly receive tailored movie suggestions. The goal of the project is to enhance the movie-watching experience by offering personalized recommendations in a fun and interactive way.</p>
+        </section>
+
+    </section>
+
+    <!-- contact me -->
+    <!-- Five logo can be in one row, and if it still not enough, you can create another row, buy doubleing the "box-contact" section -->
+    <section id="contact-me" class="grid-system-2 w-900 padding">
+        </section>
+        <section class="margin-auto align-center">
+            <h1 class="medium-spacing center">Let's get in touch!<span></span></h1>
+            <section class="box-contact margin-auto padding-top">
+                <span>
+                    <a href="mailto:bhakyashreeashok@gmail.com" target="_blank"><img class="logo" height="120%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAYFBMVEUAAAD///92dnbV1dUREREaGhrExMTJycm4uLjw8PDj4+M/Pz96enr5+fn29vbn5+eHh4evr6+Xl5ekpKRJSUmRkZEyMjIrKytaWlplZWVOTk6AgIAhISE4ODhubm7b29sZ4U4vAAAE8ElEQVR4nO2cjbKiMAyFA4iign9XERX1/d9yVRJAbSmkKbgznJmd2RHB756WNk0K4Hneagk/p3T9AIPHv8vQJCqdkhfcbGgOtbYvuOvQGGrlT7gfNQ4gesD9ZI97KvZgfh4aQqf9Gu5DM+h1h5/tcvBA2w6NoNcWDkMj6HWAzdAIem0gHhpBrxj8oRH08kc4pkY4rkY4rkY4rkY4rkY4rkY4rrRwk17VCS6Opv1q1x7u5PUu1TpLDXfvH26et4VbDACnyBH+z3CraOZW08DCOddL7v3dAs5T3uNiupa/xOtzLjMCy2pY6Ai3nrtu2bRmQke46Q3Pc5WwOOLNMGfAzeCWFGe7ScxSf4tuLDjY4IDiInIh32YTnwcHMbasPN2V2MLiRxhwcEjceJcT2xH4cHBA7zJRtuOsuGoQgg0c7NC7myDbpOabFRz84V2xl4ObFpdcF2GSDRzsikslJyE06m8BhnBWcOSdVK0HfVukIAFXtqwEXY5sd2KzhXvWPqW8I7YKxhaO6FZHS7RJhPdCrchrDQeRjHfkW70AbQ9Hl51bsVEDpPUPBeBK7yy2Uqh8k4Erh052v9uq/zwROFs6uhc+pxoZuHL4ZNFtNWxScIDBxJrPNv+eoqXgIOB6R74phiIxOAp2Fh3ZcAL0VKGNGFzlnSIrpJe2vwnDhUjXZcsHBV3q6UUQrszeBa3ZKOTShPqicF3pKODSLUNk4fJFFzpsU08bSMvClZmemSYNXpfJN3m416ZFw3cKHUy+ycMBYApqavAO23TVtDiSh7uid9PGb23MvrmAgxy9ixq+g22aNC/IHcC18I58MyQLXMDBFb3TbXK7IJspCeQEDidMXcuSb4EpgnEBR4GGxru4PGoaqx3A1dhUdJva0aA5gpGHo4Ef+93f53Xr6AbvxOFowtzvV8V/3ospZbq2zTwnDVcb+DOFd1WR4NgighGGexv4T1gQqIopt9onR/NMIguHAz8FGhm27LZYyOeEXpQvQmrZfuAuaEx5po8fLKLNKd5SPYucpJlEO89Jwikmpcz7VtXKIUUw7uEuRSMmbzUnMlPFBrBs9k4Ojm7Ej9Oyd7rkvdSY41H1LCwGF6NvX1XYNKrhzT7XgI3eScFlX8NG7dhfQbCKsu8h94rYnzOJIJzfwPZSetY90NMQX8nAZcqpqqXOnu5kETgrNoB9omlZCTjVJNpJmYZOAG5py1aN1R/W28NlhgVDK51Wqj/QGi6UYKv2vr1tuLCFO7dYpLajUwxGlnAUlEUtEjcG+d/e2cEZJm4WXS1wsIJLJdnKtXZFZwMXtkrZdKcrtzRYwKXGMLuzaKNPbA2Hvr12gEjTZXZwdJ+2T523Ei2RfCu4uwPfnqKF75kPN+lccuhK96xNMOFod4r92PutqnLCg6Myl3SbFqJ62JWzfy6girwTtIpusWPA4RTNL+mbRHtMVgw4ZHOF9lRU/Q4Hbp0qDospjGzg7La4tNDUAm66jRwr4cP1pxGODacYsdRwvvli0lKF2ZpHqzazoF8pl+q6h9ImYb9SQvyfj/P9gkY4rkY4rkY4rkY4rkY4rkY4rkY4rkY4rvzffhfYT79Fze3j5lbagVBdxoUicJCMllIA3R5s6FPhHRo3Pw+qbA7OXw/B1sEDt1lfG92fb8X90WH49Hpl79xpUpqrfF28idn03MAgepZQ/gHeJ0rNtkDXIwAAAABJRU5ErkJggg=="
+                            alt=""></a>
+                </span>
+                <span>
+                    <a href="https://www.instagram.com/bhakyashree_ak/" target="_blank"><img class="logo" src="data:image/png;base64,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" alt=""></a>
+                </span>
+                <span>
+                    <a href="https://github.com/" target="_blank"><img class="logo" src="data:image/png;base64,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" alt=""></a>
+                </span>
+            </section>
+        </section>
+    </section>
+
+   
+    <footer>© 2025 All rights reserved</footer>
+</body>
+
+</html>
